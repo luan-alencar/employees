@@ -25,7 +25,7 @@ public class SetUp {
 		addEmployee(new Employee(1L, "emp1", "manager", 3000.00));
 		addEmployee(new Employee(2L, "emp2", "developer", 1800.00));
 		addEmployee(new Employee(3L, "emp3", "dbm", 1800.00));
-		return employees = teamEmployee;
+		return teamEmployee;
 	}
 
 	public static void addEmployee(Employee e) {
