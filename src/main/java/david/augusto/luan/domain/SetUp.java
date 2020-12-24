@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SetUp {
 
+	
 	private static List<Employee> employees = createList();
 
 	@RequestMapping(value = "/employees", method = RequestMethod.GET, produces = "application/json")
@@ -22,14 +23,11 @@ public class SetUp {
 
 	public static List<Employee> createList() {
 		List<Employee> teamEmployee = new ArrayList<>();
-		addEmployee(new Employee(1L, "emp1", "manager", 3000.00));
-		addEmployee(new Employee(2L, "emp2", "developer", 1800.00));
-		addEmployee(new Employee(3L, "emp3", "dbm", 1800.00));
+		Employee e1 = new Employee(1L, "emp1", "manager", 3000.00);
+		Employee e2 = new Employee(2L, "emp2", "developer", 1800.00);
+		Employee e3 = new Employee(3L, "emp3", "dbm", 1800.00);
+		teamEmployee.addAll(Arrays.asList(e1,e2,e3));
 		return teamEmployee;
-	}
-
-	public static void addEmployee(Employee e) {
-		employees.addAll(Arrays.asList(e));
 	}
 
 	public List<Employee> getEmployees() {
